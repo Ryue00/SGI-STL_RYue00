@@ -1,10 +1,11 @@
 #pragma once
 /**
- * Copyright (c) 2020, Intretech Inc. All Rights Reserved.
- *
- * @Description: 简单的 空间配置器实现
- * @author: RYue00
- */
+* Copyright (c) 2022, RYue All rights reserved.
+*
+* @Description: 简单的 空间配置器实现
+* @author: RYue
+* @date: 2022-03-16 14:00:37
+*/
 #include <cstddef>
 #include <iostream>
 #include <vector>

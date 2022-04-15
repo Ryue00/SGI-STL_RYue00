@@ -10,21 +10,61 @@
 
 GP：泛型编程，也叫做“静态多态”，泛型即是指具有在多种数据类型上皆可操作的含义，泛型编程让你编写完全一般化并可重复使用的算法，其效率与针对某特定数据类型而设计的算法相同。具体的数据类型在编译时期确定，编译器承担更大的工作量，代码运行效率更高。STL 通过 GP 中将methods(算法)和datas(容器)分离处理。
 
-OOP：面向对象编程，也叫做“动态多态”，通过继承方式，运行时子类access虚函数表vptr来判定methods类型。运行时检索vptr就导致了效率会比较低下，而且methods 和 datas是关联在一起的。GOF 便是使用继承。
+OOP：面向对象编程，也叫做“动态多态”，通过继承方式，运行时子类access[虚函数表](https://blog.csdn.net/v_JULY_v/article/details/6446364)vptr来判定methods类型。运行时检索vptr就导致了效率会比较低下，而且methods 和 datas是关联在一起的。GOF 便是使用继承。
 
 ![](../picture/OOP_GP.png)
 
-## 迭代器(iterator) 是一种 smart pointer
 
-迭代器是一种行为类似指针的对象，而指针的各种行为中最常见的用途是 dereference 和 member access。迭代器最重要的就是对 `operator*` 和 `operator->`进行重载工作。
+## 迭代器(iterator) 是一种 smart pointer
 
 auto_ptr：用来包装原生指针(native pointer)的对象，在头文件 <memory> 中定义。
 
-为什么每一种 STL 容器都提供有专属迭代器的缘故。
+为什么说迭代器也是一种智能指针，每一种容器都有自己的迭代器，以下看一下实例。
 
-主要是暴露太多细节，所以把迭代器的开发工作交给容器去完成，这样所有实现细节可以得到封装，不被使用者看到。
+实现自己的List容器和迭代器
+```cpp
+// node
+template <typename T>
+class ListNode
+{
+  public:
+  T value() {return m_value;}
+  ListNode* next() {return m_next;}
 
-迭代器是一种行为类似指针的对象，
+  private:
+  T m_value;
+  ListNode* m_next;
+}
+
+// mylist
+template <typename T>
+class List
+{
+  public:
+  void insert_front(T value);
+  void insert_end(T value);
+
+  private:
+  ListNode* m_end;
+  ListNode* m_front;
+}
+
+// ListIterator
+template <class TNode> // 传入list的node
+class ListIterator
+{
+  public:
+  ListIterator(TNode* p = 0) : m_pNode(p){} // 构造函数
+  TNode& operator*() const{return *m_pNode;} // dereference 取值
+  TNode* operator->() const{return m_pNode;} // member access 成员访问
+  TNode& operator++() {m_pNode = m_pNode->next(); return *this; }
+  TNode* m_pNode;
+}
+
+```
+指针行为中常见的用途是 dereference 和 member access。从以上ListIterator可以看出，迭代器重要一步就是对 `operator*` 和 `oparator->`进行重载。
+
+如，ListIterator中为了实现 `operator++` 暴露了List的内部细节，即ListNode的next()。正是由于设计迭代器过程会暴露容器的许多细节，STL 中就把迭代器的实现交给了容器的设计者，每一个容器都有自己的迭代器，这样也隐藏了所有实现。
 
 ## 迭代器相应类型(associated types)
 
