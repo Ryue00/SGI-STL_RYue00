@@ -17,10 +17,29 @@ void after(){
 
 typedef void *function ();
 
+class CultureAttribute
+{
+    
+}
+
 int main(int argc, char** argv)
 {
-     std::cout << "hello world!" << std::endl;
-     system("pause");
+    //  std::cout << "hello world!" << std::endl;
+
+        std::string strSource;
+    char ch;
+    cin >> strSource;
+    cin >> ch;
+    
+    char count = 0;
+    for (int i = 0; i < strSource.size(); i++)
+    {
+        if (ch == strSource[0])
+            count ++;
+    }
+    cout << count;
+
+    system("pause");
     return 0;
 }
 
