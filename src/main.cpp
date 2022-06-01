@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <map>
+#include <string>
 using namespace std;
 
 void before() __attribute__((constructor));
@@ -20,29 +22,45 @@ typedef void *function ();
 class CultureAttribute
 {
     
-}
+};
 
+// int main(int argc, char** argv)
+// {
+//     //  std::cout << "hello world!" << std::endl;
+
+//         std::string strSource;
+//     char ch;
+//     cin >> strSource;
+//     cin >> ch;
+    
+//     char count = 0;
+//     for (int i = 0; i < strSource.size(); i++)
+//     {
+//         if (ch == strSource[0])
+//             count ++;
+//     }
+//     cout << count;
+
+//     system("pause");
+//     return 0;
+// }
 int main(int argc, char** argv)
 {
     //  std::cout << "hello world!" << std::endl;
 
-        std::string strSource;
-    char ch;
-    cin >> strSource;
-    cin >> ch;
-    
-    char count = 0;
-    for (int i = 0; i < strSource.size(); i++)
+    std::map<std::string,int> iMap;
+    iMap["111"] = 1;
+    iMap["222"] = 2;
+    iMap["333"] = 3;
+    iMap["444"] = 4;
+    auto ite = iMap.find("111");
+    if (ite != iMap.end())
     {
-        if (ch == strSource[0])
-            count ++;
+        std::cout << ite->second; 
     }
-    cout << count;
-
     system("pause");
     return 0;
 }
-
 // 输出结果
 // this is function before
 // this is function main
