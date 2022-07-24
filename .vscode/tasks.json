@@ -3,6 +3,7 @@
     "command": "g++",
     "args": [
         "-g",
+        "-pthread",
         "${file}",
         "-o",
         "${workspaceFolder}/exe/${fileBasenameNoExtension}.exe"

@@ -11,6 +11,13 @@
                 "d:/app/mingw/bin/../lib/gcc/mingw32/9.2.0/include",
                 "d:/app/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../include",
                 "d:/app/mingw/bin/../lib/gcc/mingw32/9.2.0/include-fixed"
+                // "d:/app/mingw/mingw64/include/**",
+                // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include/c++",
+                // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include/c++/mingw32",
+                // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include/c++/backward",
+                // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include",
+                // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/../../../../include",
+                // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include-fixed"
             ],
             "defines": [
                 "_DEBUG",
@@ -31,6 +38,13 @@
                     "d:/app/mingw/bin/../lib/gcc/mingw32/9.2.0/include",
                     "d:/app/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../include",
                     "d:/app/mingw/bin/../lib/gcc/mingw32/9.2.0/include-fixed"
+                    // "d:/app/mingw/mingw64/include/**",
+                    // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include/c++",
+                    // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include/c++/mingw32",
+                    // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include/c++/backward",
+                    // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include",
+                    // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/../../../../include",
+                    // "d:/app/mingw/mingw64/bin/../lib/gcc/mingw32/8.1.0/include-fixed"
                 ]
             }
         }

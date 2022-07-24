@@ -66,6 +66,23 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp",
+        "ctime": "cpp",
+        "forward_list": "cpp",
+        "ratio": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp",
+        "thread": "cpp",
+        "format": "cpp",
+        "locale": "cpp",
+        "stop_token": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     }
 }
